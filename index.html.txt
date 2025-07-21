@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mazone Plus - Your Online Shopping Destination</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f1f2f6;
+}
+/* Custom scrollbar for better aesthetics */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+.carousel-item {
+flex: 0 0 100%;
+}
+</style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo and Search Bar -->
+<div class="flex items-center space-x-4 lg:space-x-8">
+<a href="#" class="text-2xl font-bold text-blue-600">Mazone<span class="text-yellow-500">Plus</span></a>
+<div class="hidden lg:flex items-center bg-gray-100 rounded-lg px-4 py-2 w-96">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<input type="text" placeholder="Search for products, brands and more" class="bg-transparent focus:outline-none ml-2 w-full">
+</div>
+</div>
+
+<!-- Navigation -->
+<nav class="flex items-center space-x-4 sm:space-x-6 lg:space-x-8">
+<a href="#" class="hidden md:flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+<span>Login</span>
+</a>
+<a href="#" class="hidden md:block text-gray-700 hover:text-blue-600 transition-colors">Become a Seller</a>
+<a href="#" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.16"/></svg>
+<span>Cart</span>
+</a>
+<a href="#" class="hidden md:block text-gray-700 hover:text-blue-600 transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/></svg>
+</a>
+</nav>
+</div>
+<!-- Mobile Search Bar -->
+<div class="lg:hidden p-2">
+<div class="flex items-center bg-gray-100 rounded-lg px-4 py-2 w-full">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+<input type="text" placeholder="Search for products..." class="bg-transparent focus:outline-none ml-2 w-full">
+</div>
+</div>
+</div>
+</header>
+
+<!-- Category Navigation -->
+<div class="bg-white shadow-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar">
+<div class="flex justify-between items-center space-x-6 sm:space-x-8 py-3">
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Mobiles" alt="Mobiles" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Mobiles</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Electronics" alt="Electronics" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Electronics</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=TVs" alt="TVs" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">TVs</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Fashion" alt="Fashion" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Fashion</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Home" alt="Home" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Home</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Appliances" alt="Appliances" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Appliances</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Travel" alt="Travel" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Travel</span>
+</a>
+<a href="#" class="flex flex-col items-center space-y-1 text-gray-700 hover:text-blue-600 transition-colors flex-shrink-0">
+<img src="https://placehold.co/80x80/E0F2FE/3B82F6?text=Toys" alt="Toys" class="w-16 h-16 rounded-full object-cover">
+<span class="text-sm font-medium">Toys & More</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+
+<!-- Hero Banner Carousel -->
+<div class="relative w-full rounded-lg overflow-hidden shadow-lg mb-6">
+<div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+<div class="carousel-item">
+<img src="https://placehold.co/1200x400/3B82F6/FFFFFF?text=Biggest+Sale+of+the+Year!+Up+to+70%25+Off" alt="Banner 1" class="w-full h-auto object-cover">
+</div>
+<div class="carousel-item">
+<img src="https://placehold.co/1200x400/10B981/FFFFFF?text=New+Arrivals+in+Electronics" alt="Banner 2" class="w-full h-auto object-cover">
+</div>
+<div class="carousel-item">
+<img src="https://placehold.co/1200x400/F59E0B/FFFFFF?text=Fashion+Fiesta+-+Shop+Now!" alt="Banner 3" class="w-full h-auto object-cover">
+</div>
+</div>
+<button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full focus:outline-none">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+</button>
+<button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full focus:outline-none">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+</button>
+</div>
+
+<!-- Best of Electronics Section -->
+<section class="bg-white p-4 rounded-lg shadow-md mb-6">
+<h2 class="text-xl font-semibold mb-4">Best of Electronics</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Product Card -->
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Camera" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Top Mirrorless Cameras</h3>
+<p class="text-green-600 font-semibold">From ₹89,999</p>
+<p class="text-gray-500 text-xs">Canon, Sony, Fujifilm...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Laptop" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Premium Laptops</h3>
+<p class="text-green-600 font-semibold">From ₹45,990</p>
+<p class="text-gray-500 text-xs">HP, Dell, Apple...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Headphones" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Noise Cancelling Headphones</h3>
+<p class="text-green-600 font-semibold">Min. 50% Off</p>
+<p class="text-gray-500 text-xs">Sony, Bose, Sennheiser...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Smartwatch" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Best Selling Smartwatches</h3>
+<p class="text-green-600 font-semibold">From ₹1,999</p>
+<p class="text-gray-500 text-xs">Apple, Samsung, Amazfit...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Monitor" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">4K Monitors</h3>
+<p class="text-green-600 font-semibold">Min. 30% Off</p>
+<p class="text-gray-500 text-xs">LG, Samsung, BenQ...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/F3F4F6/1F2937?text=Printer" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Printers</h3>
+<p class="text-green-600 font-semibold">From ₹2,339</p>
+<p class="text-gray-500 text-xs">HP, Canon, Epson...</p>
+</div>
+</div>
+</section>
+
+<!-- Beauty, Food, Toys & more -->
+<section class="bg-white p-4 rounded-lg shadow-md mb-6">
+<h2 class="text-xl font-semibold mb-4">Beauty, Food, Toys & more</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Product Card -->
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Toys" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Remote Control Toys</h3>
+<p class="text-green-600 font-semibold">Up to 80% Off</p>
+<p class="text-gray-500 text-xs">Cars, Drones & More</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Coffee" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Premium Coffee</h3>
+<p class="text-green-600 font-semibold">Up to 50% Off</p>
+<p class="text-gray-500 text-xs">Nescafe, Starbucks...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Makeup" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Makeup Kits</h3>
+<p class="text-green-600 font-semibold">Min. 60% Off</p>
+<p class="text-gray-500 text-xs">Lakme, Maybelline...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Cycles" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Geared Cycles</h3>
+<p class="text-green-600 font-semibold">From ₹3,999</p>
+<p class="text-gray-500 text-xs">Hero, Hercules...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Stationery" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Top Selling Stationery</h3>
+<p class="text-green-600 font-semibold">From ₹49</p>
+<p class="text-gray-500 text-xs">Pens, Notebooks...</p>
+</div>
+<div class="border rounded-lg p-2 text-center hover:shadow-xl transition-shadow">
+<img src="https://placehold.co/200x200/FEF2F2/991B1B?text=Helmets" alt="Product" class="mx-auto h-32 object-contain mb-2">
+<h3 class="font-medium text-sm">Rider Helmets</h3>
+<p class="text-green-600 font-semibold">From ₹699</p>
+<p class="text-gray-500 text-xs">Vega, Steelbird...</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white pt-10 pb-6">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+<!-- About -->
+<div class="space-y-4">
+<h3 class="text-gray-400 uppercase text-sm font-semibold">About</h3>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-blue-400 text-sm">Contact Us</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">About Us</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Careers</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Mazone Plus Stories</a></li>
+</ul>
+</div>
+<!-- Help -->
+<div class="space-y-4">
+<h3 class="text-gray-400 uppercase text-sm font-semibold">Help</h3>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-blue-400 text-sm">Payments</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Shipping</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Cancellation & Returns</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">FAQ</a></li>
+</ul>
+</div>
+<!-- Policy -->
+<div class="space-y-4">
+<h3 class="text-gray-400 uppercase text-sm font-semibold">Policy</h3>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-blue-400 text-sm">Return Policy</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Terms Of Use</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Security</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Privacy</a></li>
+</ul>
+</div>
+<!-- Social -->
+<div class="space-y-4">
+<h3 class="text-gray-400 uppercase text-sm font-semibold">Social</h3>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-blue-400 text-sm">Facebook</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">Twitter</a></li>
+<li><a href="#" class="hover:text-blue-400 text-sm">YouTube</a></li>
+</ul>
+</div>
+<!-- Mail Us -->
+<div class="border-l border-gray-700 pl-8 col-span-2 md:col-span-2">
+<h3 class="text-gray-400 uppercase text-sm font-semibold">Mail Us</h3>
+<p class="text-sm mt-2 leading-relaxed">
+Mazone Plus Internet Private Limited,<br>
+Buildings Alyssa, Begonia &<br>
+Clove Embassy Tech Village,<br>
+Outer Ring Road, Devarabeesanahalli Village,<br>
+Bengaluru, 560103,<br>
+Karnataka, India
+</p>
+</div>
+</div>
+<hr class="my-6 border-gray-700">
+<div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+<p>&copy; 2024-2025 MazonePlus.com. All rights reserved.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" alt="Payment Methods">
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// Hero Banner Carousel Logic
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+let currentIndex = 0;
+let intervalId;
+
+function updateCarousel() {
+carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function showNext() {
+currentIndex = (currentIndex + 1) % totalItems;
+updateCarousel();
+}
+
+function showPrev() {
+currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+updateCarousel();
+}
+
+function startAutoplay() {
+intervalId = setInterval(showNext, 3000); // Change slide every 3 seconds
+}
+
+function stopAutoplay() {
+clearInterval(intervalId);
+}
+
+nextBtn.addEventListener('click', () => {
+showNext();
+stopAutoplay();
+startAutoplay();
+});
+
+prevBtn.addEventListener('click', () => {
+showPrev();
+stopAutoplay();
+startAutoplay();
+});
+
+// Start autoplay on page load
+startAutoplay();
+
+// Initialize lucide icons
+lucide.createIcons();
+</script>
+
+</body>
+</html>
